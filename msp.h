@@ -197,7 +197,7 @@ private:
         return true;
       case MSP_ATTITUDE: {
         r.s16((int16_t)lrintf(fc.roll * 10.0f));
-        r.s16((int16_t)lrintf(-fc.pitchDown * 10.0f));       // MSP pitch: nose up = +
+        r.s16((int16_t)lrintf(fc.pitchDown * 10.0f));        // pitch shown in Configurator (flipped to match real nose up/down)
         float h = fc.yaw; if (h < 0) h += 360.0f;
         r.s16((int16_t)lrintf(h));
         return true;
